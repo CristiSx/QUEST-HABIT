@@ -4,7 +4,7 @@ A full-stack rebuild of the gamified habit tracker specification, featuring a **
 
 ---
 
-## 1. How to Install and Run
+## How to Install and Run
 
 ### Option A: With Docker (Recommended)
 From the `code/` directory, run:
