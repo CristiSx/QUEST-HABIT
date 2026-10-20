@@ -15,7 +15,7 @@ import { QuestForm } from "./components/QuestForm";
 import { QuestBoard } from "./components/QuestBoard";
 import { AdventureLog } from "./components/AdventureLog";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 function formatDayInTimeZone(date: Date, timeZone: string): string {
   try {
@@ -290,7 +290,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="font-pixel text-xs text-amber-300 tracking-wider">
-                    *** FANFARE: LEVEL UP! ***
+                    LEVEL UP! 
                   </p>
                   <h3 className="font-pixel text-lg sm:text-xl text-white mt-2 drop-shadow-[2px_2px_0px_#000]">
                     LVL {levelUpBanner.from} ▶ LVL {levelUpBanner.to}

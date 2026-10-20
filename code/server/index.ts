@@ -112,7 +112,7 @@ async function computeMe(now: Date) {
     if (i > 0) {
       const prevDay = activeDays[i - 1];
       if (dayToEpochDays(day) - dayToEpochDays(prevDay) === 1) {
-        currentStreak = (streakByDay.get(prevDay) ?? 1) + 1;
+        currentStreak = (streakByDay.get(prevDay)??1) + 1;
       }
     }
     streakByDay.set(day, currentStreak);

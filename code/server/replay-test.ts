@@ -18,7 +18,7 @@ async function runTests() {
   const app = buildServer();
   await app.ready();
 
-  // 1. Reset state before replaying reference_recording.jsonl
+
   await app.inject({ method: "POST", url: "/test/reset" });
 
   const localPath = path.resolve(process.cwd(), "reference_recording.jsonl");
@@ -79,7 +79,7 @@ async function runTests() {
     `✔ All ${lines.length} recorded requests matched 100% with reference_recording.jsonl!`
   );
 
-  // 2. Custom edge-case tests (overdue hard quest penalty + reset)
+
   console.log("[Test 2/2] Running custom edge-case tests...");
   await app.inject({ method: "POST", url: "/test/reset" });
 
@@ -103,7 +103,7 @@ async function runTests() {
   assert.equal(completeLate.statusCode, 201);
   assert.equal(completeLate.json().completion.base_xp, 25); // 50 / 2 = 25 XP
 
-  // Clean up after tests
+
   await app.inject({ method: "POST", url: "/test/reset" });
   console.log("✔ Custom edge-case tests passed!");
 

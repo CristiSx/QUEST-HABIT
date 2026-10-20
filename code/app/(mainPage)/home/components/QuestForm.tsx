@@ -67,28 +67,39 @@ export function QuestForm({ onAddQuest }: QuestFormProps) {
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label className="block font-pixel text-[10px] text-slate-300 mb-2">
-              MONSTER RANK (EXP):
+              MISSION DIFICULTY (EXP):
             </label>
             <div className="grid grid-cols-3 gap-2">
-              {(["easy", "medium", "hard"] as Difficulty[]).map((d) => {
-                const cfg = DIFFICULTY_CONFIG[d];
-                const selected = difficulty === d;
-                return (
-                  <button
-                    key={d}
-                    type="button"
-                    onClick={() => setDifficulty(d)}
-                    className={`pixel-btn py-2 px-1 text-center ${
-                      selected ? cfg.btnColor : "bg-[#120d1d] text-slate-400"
-                    }`}
-                  >
-                    <div className="font-pixel text-[9px]">{cfg.label}</div>
-                    <div className="font-vt text-xl leading-none mt-1">
-                      +{cfg.xp} EXP
-                    </div>
-                  </button>
-                );
-              })}
+                <button
+                  type="button"
+                  onClick={() => setDifficulty("easy")}
+                  className={`pixel-btn py-2 px-1 text-center ${
+                    difficulty === "easy" ? DIFFICULTY_CONFIG.easy.btnColor : "bg-[#120d1d] text-slate-400"
+                  }`}
+                >
+                  <div className="font-pixel text-[9px]">EASY</div>
+                  <div className="font-vt text-xl leading-none mt-1">+10 EXP</div>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setDifficulty("medium")}
+                  className={`pixel-btn py-2 px-1 text-center ${
+                    difficulty === "medium" ? DIFFICULTY_CONFIG.medium.btnColor : "bg-[#120d1d] text-slate-400"
+                  }`}
+                >
+                  <div className="font-pixel text-[9px]">MEDIUM</div>
+                  <div className="font-vt text-xl leading-none mt-1">+25 EXP</div>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setDifficulty("hard")}
+                  className={`pixel-btn py-2 px-1 text-center ${
+                    difficulty === "hard" ? DIFFICULTY_CONFIG.hard.btnColor : "bg-[#120d1d] text-slate-400"
+                  }`}
+                >
+                  <div className="font-pixel text-[9px]">HARD</div>
+                  <div className="font-vt text-xl leading-none mt-1">+50 EXP</div>
+                </button>
             </div>
           </div>
 
