@@ -7,7 +7,7 @@ A full-stack rebuild of the gamified habit tracker specification, featuring a **
 ## How to Install and Run
 
 ### Option A: With Docker (Recommended)
-From the `code/` directory, run:
+From the `code/` (```bash cd code ```) directory, run:
 
 ```bash
 docker compose up --build
